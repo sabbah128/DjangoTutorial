@@ -17,7 +17,7 @@ def blog_view(request, **kwargs):
     except PageNotAnInteger:
         posts = posts.page(1)
     except EmptyPage:
-        posts = posts.page(2)
+        posts = posts.page(1)
 
     return render(request, 'blog/blog-home.html', {'posts': posts})
 
