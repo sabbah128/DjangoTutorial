@@ -9,17 +9,10 @@
 </head>
 <body>
     <h3>Test Page</h3>  
-    <p>power : {% hello 5 %}</p>
-    
-    <p> count = {% count_posts %} </p>
-    <p> count = {% count_posts as count %} {{ count }} </p>
-
-    {% comment %} {% t_posts as tp %}
-    {% for post in tp %}
-        <p>{{post.title}}</p>
-        <p>{{post.content|truncatechars:190}}</p>
-        <br>
-    {% endfor %} {% endcomment %}
-    {% latest_post %}
+    <form action="{% url 'website:test' %}" method='post'>
+         {% csrf_token %}
+         {{form.as_p}}
+        <button type='submit'>Submit</button>
+    </form>
 </body>
 </html>

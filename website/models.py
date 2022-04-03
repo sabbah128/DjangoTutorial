@@ -10,7 +10,10 @@ class Contact(models.Model):
     updateed_date = models.DateTimeField(auto_now=True)
     class Meta:
         ordering = ('-created_date',)
-
-
     def __str__(self):
         return self.name
+
+class Newsletter(models.Model):
+    email = models.EmailField()    
+    def __str__(self):
+        return self.email
